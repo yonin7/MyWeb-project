@@ -3,51 +3,54 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  background-color: #1b1919;
+-- body {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  background-color: #030303;
   color: #e2e2e2;
   height: 100vh;
 }
 
 .navbar {
   position: fixed;
-  left: 0;
-  right: 0;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-  border-bottom: 1px solid #e2e2e2;
+  border-bottom: 1px solid #f0860c;
   background-color: hsla(0, 3%, 77%, 0.541);
   z-index: 2;
 }
 
+.navbar__logo a {
+  text-decoration: none;
+  color: white;
+}
 .navbar__logo {
-  left: 50px;
   font-size: 2rem;
   transition: all 1s ease-in-out;
 }
-
 .navbar__logo:hover {
-  color: #f0860c;
   transform: scale(1.5);
 }
 
+.navbar__logo a:hover {
+  color: #f0860c;
+}
+
 .navbar__menu {
-  width: 80%;
   list-style: none;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 35%;
 }
 
 .navbar__menu li {
   padding: 25px;
-  font-size: 1.5rem;
 }
 
 .navbar__menu li a {
+  font-size: 1rem;
   text-decoration: none;
   color: white;
   transition: all 1s ease-in-out;
@@ -57,41 +60,52 @@ body {
   color: #f0860c;
 }
 
-.firstpage {
+.aboutMe {
+  position: relative;
   border-bottom: 3px rgb(117, 117, 117) solid;
-  height: 100vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutMe::before {
+  content: '';
   background-image: url(/img/WhatsApp\ Image\ 2021-07-07\ at\ 21.36.03-modified.jpeg);
   background-repeat: no-repeat;
   background-position: right;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: left;
+  opacity: 0.25;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
-.firstpage__text {
+.aboutMe__text {
   display: flex;
   flex-direction: column;
-  width: 50%;
-  max-height: 70%;
+  padding: 0 2rem;
+  line-height: 4.5vh;
   font-size: 1rem;
-  line-height: 3rem;
-  margin-left: 13rem;
-  margin-top: 15rem;
 }
 
-.secondpage {
+.aboutMe h1 {
+  font-size: 1.65rem;
+}
+.aboutMe h2 {
+  font-size: 1.15rem;
+}
+
+.skillsAndProjects {
   border-bottom: 3px rgb(117, 117, 117) solid;
   height: 100vh;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.secondpage__card {
-  width: 50rem;
-  height: 50%;
+.skillsAndProjects__card {
   border-radius: 3rem;
   display: flex;
   flex-direction: column;
@@ -99,47 +113,39 @@ body {
   justify-content: center;
 }
 
-.secondpage__card--text {
+.skillsAndProjects__card--text {
   font-size: 2.2rem;
   text-align: center;
   margin: 2rem;
 }
 
-.secondpage__card--img {
-  display: grid;
+.skillsAndProjects__card--img {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
-  grid-gap: 3rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: 20px;
 }
 
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.secondpage__card--img div {
-  border: 1px solid hsla(0, 3%, 77%, 0.541);
-  padding: 20px;
-  width: 5rem;
-  height: 5rem;
+.skillsAndProjects__card--img div {
   transition: all 1s ease-in-out;
+  border: 1px solid hsla(0, 3%, 77%, 0.541);
+  border-radius: 20%;
+  margin: 0.2rem 0.5rem;
 }
 
-.secondpage__card--img div:hover {
+.skillsAndProjects__card--img div:hover {
   background-color: hsla(0, 3%, 77%, 0.541);
+  border: 1px solid hsla(0, 3%, 77%, 0.541);
   border-radius: 50%;
   transform: scale(2);
 }
-.thirdpage {
-  border-bottom: 3px rgb(117, 117, 117) solid;
-  height: 100vh;
-  position: relative;
-}
 
-.fourthpage {
+.skillsAndProjects__card--img img {
+  height: 15vh;
+  width: 15vh;
+}
+.contact {
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -147,7 +153,7 @@ img {
   align-items: center;
 }
 
-.fourthpage__img {
+.contact__img {
   background-image: url(https://static.wixstatic.com/media/b90e39_c32fd6e671d043efa9ce81544be6123a~mv2_d_3000_1259_s_2.jpg/v1/fill/w_979,h_411,al_c,q_85,usm_0.66_1.00_0.01/darren-hughes-art-website-contact.webp);
   background-repeat: no-repeat;
   background-position: center;
@@ -157,7 +163,7 @@ img {
   height: 50vh;
 }
 
-.fourthpage__text {
+.contact__text {
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -165,7 +171,24 @@ img {
   margin-top: 2rem;
 }
 
-.fourthpage__text--inputs {
+.contact__text--inputs {
   display: flex;
   flex-direction: column;
+}
+
+.links {
+  width: 100%;
+  background-color: hsla(0, 3%, 77%, 0.541);
+}
+
+.links__menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.links__menu li {
+  padding: 1rem 15px;
 }
