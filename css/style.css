@@ -74,12 +74,21 @@ body {
   background-image: url(/img/WhatsApp\ Image\ 2021-07-07\ at\ 21.36.03-modified.jpeg);
   background-repeat: no-repeat;
   background-position: right;
-  opacity: 0.25;
+  animation: animate1 5s forwards ease-in-out;
   position: absolute;
   top: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+@keyframes animate1 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.4;
+  }
 }
 
 .aboutMe__text {
@@ -95,6 +104,25 @@ body {
 }
 .aboutMe h2 {
   font-size: 1.15rem;
+}
+
+@media (max-width: 500px) {
+  .navbar__logo {
+    margin-left: 2vw;
+  }
+  .navbar__menu {
+    margin: 0 auto;
+  }
+  .navbar__menu li {
+    padding: 20px;
+  }
+  .navbar__menu li a {
+    font-size: 5vw;
+  }
+  .aboutMe__text {
+    line-height: 5vh;
+    font-size: 0.75rem;
+  }
 }
 
 .skillsAndProjects {
