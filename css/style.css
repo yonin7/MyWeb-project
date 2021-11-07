@@ -21,16 +21,17 @@ body {
   z-index: 2;
 }
 
-.navbar__logo a {
-  text-decoration: none;
-  color: white;
-}
 .navbar__logo {
+  margin-left: 4rem;
   font-size: 2rem;
   transition: all 1s ease-in-out;
 }
 .navbar__logo:hover {
   transform: scale(1.5);
+}
+.navbar__logo a {
+  text-decoration: none;
+  color: white;
 }
 
 .navbar__logo a:hover {
@@ -58,6 +59,7 @@ body {
 
 .navbar__menu li a:hover {
   color: #f0860c;
+  border-bottom: 1px solid #f0860c;
 }
 
 .aboutMe {
@@ -95,34 +97,15 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 2rem;
-  line-height: 4.5vh;
+  line-height: 6vh;
   font-size: 1rem;
 }
 
 .aboutMe h1 {
-  font-size: 1.65rem;
+  font-size: 2.5rem;
 }
 .aboutMe h2 {
-  font-size: 1.15rem;
-}
-
-@media (max-width: 500px) {
-  .navbar__logo {
-    margin-left: 2vw;
-  }
-  .navbar__menu {
-    margin: 0 auto;
-  }
-  .navbar__menu li {
-    padding: 20px;
-  }
-  .navbar__menu li a {
-    font-size: 5vw;
-  }
-  .aboutMe__text {
-    line-height: 5vh;
-    font-size: 0.75rem;
-  }
+  font-size: 1.5rem;
 }
 
 .skillsAndProjects {
@@ -160,18 +143,20 @@ body {
   border: 1px solid hsla(0, 3%, 77%, 0.541);
   border-radius: 20%;
   margin: 0.2rem 0.5rem;
+  padding: 0.5rem;
 }
 
 .skillsAndProjects__card--img div:hover {
   background-color: hsla(0, 3%, 77%, 0.541);
   border: 1px solid hsla(0, 3%, 77%, 0.541);
   border-radius: 50%;
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 .skillsAndProjects__card--img img {
   height: 15vh;
   width: 15vh;
+  object-fit: contain;
 }
 .contact {
   height: 100vh;
@@ -219,4 +204,31 @@ body {
 
 .links__menu li {
   padding: 1rem 15px;
+}
+
+@media (max-width: 500px) {
+  .navbar {
+    visibility: hidden;
+  }
+  .aboutMe h1 {
+    font-size: 1.5rem;
+  }
+  .aboutMe h2 {
+    font-size: 1.15rem;
+  }
+
+  .aboutMe__text {
+    line-height: 5vh;
+    font-size: 0.75rem;
+  }
+
+  .skillsAndProjects__card--img div:hover {
+    transform: scale(1.2);
+  }
+
+  .skillsAndProjects__card--img img {
+    height: 10vh;
+    width: 12vh;
+    object-fit: contain;
+  }
 }
